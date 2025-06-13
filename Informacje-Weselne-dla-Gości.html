@@ -823,9 +823,8 @@
         
           // Send form data to server
     emailjs.send("ankieta_weselna", "template_01jn3in", allFormsData)
-            .then(() => showConfirmation();
-                    })
-            .catch((error) => showError());
+            .then((data) => {showConfirmation();  })
+            .catch((error) => {showError()});
 
           
           function showConfirmation() {
