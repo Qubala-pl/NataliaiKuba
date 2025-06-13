@@ -17,6 +17,13 @@ body {
 font-family: 'Montserrat', sans-serif;
 background-color: #fff9f8;
 }
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 0 8px rgba(245, 182, 193, 0); }
+  50% { text-shadow: 0 0 12px rgba(245, 182, 193, 0.5); }
+}
+.font-\[\'Pacifico\'\] {
+  animation: textGlow 3s ease-in-out infinite;
+}
 h1, h2, h3, h4 {
 font-family: 'Cormorant Garamond', serif;
 }
@@ -87,7 +94,10 @@ width: 100%;
 <body>
 <header class="sticky top-0 z-50 bg-white bg-opacity-95 shadow-sm">
 <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
-<div class="font-['Pacifico'] text-primary text-2xl">Natalia & Kuba</div>
+<div class="font-['Pacifico'] text-primary text-3xl font-bold relative group">
+  <span class="relative z-10">Natalia & Kuba</span>
+  <span class="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span>
+</div>
 <div class="hidden md:flex space-x-8">
 <a href="#home" class="nav-link text-gray-700 hover:text-primary transition-colors">Strona główna</a>
 <a href="#ceremony" class="nav-link text-gray-700 hover:text-primary transition-colors">Ceremonia</a>
@@ -114,7 +124,7 @@ width: 100%;
 <div class="section-divider"></div>
 <section id="ceremony" class="py-20 bg-white">
 <div class="container mx-auto px-4">
-<h2 class="text-4xl md:text-5xl text-center font-light text-gray-800 mb-16">Ceremonia Ślubna</h2>
+<h2 class="text-5xl md:text-6xl text-center font-light text-gray-800 mb-16">Ceremonia Ślubna</h2>
 <div class="flex flex-col md:flex-row items-center gap-10">
 <div class="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
 <img src="https://static.readdy.ai/image/7d9813ab0a0992233ca166ade4b3174c/0984a0bf08e8592232a1e43068176f31.jpeg" alt="Kościół św. Anny" class="w-full h-auto object-cover">
@@ -141,10 +151,10 @@ width: 100%;
 </div>
 <div class="bg-white p-4 rounded-lg shadow-md">
 <h4 class="text-xl font-medium text-gray-800 mb-3">Jak dojechać:</h4>
-<p class="text-gray-700 mb-4">Kościół znajduje się w centrum Gliwic. Dostępne są liczne połączenia komunikacji miejskiej (autobusy: 32, 57, 126, 202; tramwaje: 1, 4).</p>
+<p class="text-gray-700 mb-4">Kościół znajduje się w dzielnicy Stare Gliwice. Można do niego dojechać autobusami linii 57, 699, 692, 186, 259. Wszystkie linie przejeżdżają przez Gliwickie Centrum Przesiadkowe.</p>
 <a href="https://www.google.com/maps/search/?api=1&query=Parafia+św.+Gerarda+Wiejska+17+44-121+Gliwice" target="_blank" rel="noopener noreferrer" class="h-48 bg-gray-100 rounded relative overflow-hidden block hover:opacity-90 transition-opacity cursor-pointer">
 <div class="absolute inset-0" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-position: center; background-size: cover;"></div>
-<div class="absolute bottom-3 right-3 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center">
+<div class="absolute bottom-2 right-2 w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center">
 <i class="ri-arrow-right-up-line text-primary"></i>
 </div>
 </a>
@@ -187,7 +197,7 @@ width: 100%;
 <div class="section-divider transform rotate-180"></div>
 <section id="reception" class="py-20 bg-secondary bg-opacity-10">
 <div class="container mx-auto px-4">
-<h2 class="text-4xl md:text-5xl text-center font-light text-gray-800 mb-16">Przyjęcie Weselne</h2>
+<h2 class="text-5xl md:text-6xl text-center font-light text-gray-800 mb-16">Przyjęcie Weselne</h2>
 <div class="flex flex-col md:flex-row-reverse items-center gap-10">
 <div class="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
 <img src="https://static.readdy.ai/image/7d9813ab0a0992233ca166ade4b3174c/5a3f692b8ac8022cdd083b38fb8b0f72.webp" alt="Restauracja Umami" class="w-full h-auto object-cover">
@@ -215,9 +225,9 @@ width: 100%;
 <div class="bg-secondary bg-opacity-20 p-4 rounded-lg">
 <h4 class="text-xl font-medium text-gray-800 mb-3">Informacje dodatkowe:</h4>
 <p class="text-gray-700 mb-4">Restauracja Umami słynie z wyjątkowej kuchni fusion i eleganckiego wystroju. Posiada przestronny taras z widokiem na ogród, idealny na wieczorne rozmowy i odpoczynek.</p>
-<a href="https://www.google.com/maps/search/?api=1&query=Restauracja+Umami+Sikorskiego+46+44-120+Pyskowice" target="_blank" rel="noopener noreferrer" class="h-48 bg-gray-100 rounded relative overflow-hidden block hover:opacity-90 transition-opacity cursor-pointer">
+<a href="https://www.google.com/maps/place/Umami/@50.3913079,18.6180089,17z/data=!3m1!4b1!4m6!3m5!1s0x471125aa45a14015:0x150736f57d8fb999!8m2!3d50.3913046!4d18.6228798!16s%2Fg%2F1tczcmjk?entry=ttu&g_ep=EgoyMDI1MDYxMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="h-48 bg-gray-100 rounded relative overflow-hidden block hover:opacity-90 transition-opacity cursor-pointer">
 <div class="absolute inset-0" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-position: center; background-size: cover;"></div>
-<div class="absolute bottom-3 right-3 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center">
+<div class="absolute bottom-2 right-2 w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center">
 <i class="ri-arrow-right-up-line text-primary"></i>
 </div>
 </a>
@@ -229,10 +239,9 @@ width: 100%;
 <div class="section-divider"></div>
 <section id="rsvp" class="py-20 bg-white">
 <div class="container mx-auto px-4 max-w-3xl">
-<h2 class="text-4xl md:text-5xl text-center font-light text-gray-800 mb-6">Ankieta dla Gości</h2>
+<h2 class="text-5xl md:text-6xl text-center font-light text-gray-800 mb-6">Ankieta dla Gości</h2>
 <p class="text-center text-gray-700 mb-16">Prosimy o wypełnienie krótkiej ankiety, która pomoże nam w przygotowaniach.</p>
-
-  <div id="guests-forms">
+<div id="guests-forms">
 <form class="bg-white shadow-lg rounded-lg p-8 border border-gray-100 mb-8 guest-form">
 <div class="mb-8">
 <h3 class="text-2xl font-light text-gray-800 mb-6">Dane osobowe</h3>
@@ -295,19 +304,6 @@ width: 100%;
 <div class="mb-8">
 <h3 class="text-2xl font-light text-gray-800 mb-6">Dodatkowe informacje</h3>
 <div class="mb-6">
-<label class="block text-gray-700 mb-2">Czy będziesz potrzebować noclegu?</label>
-<div class="flex items-center space-x-4">
-<label class="flex items-center">
-<input type="radio" name="accommodation" class="mr-2">
-<span>Tak</span>
-</label>
-<label class="flex items-center">
-<input type="radio" name="accommodation" class="mr-2">
-<span>Nie</span>
-</label>
-</div>
-</div>
-<div class="mb-6">
 <label class="block text-gray-700 mb-2">Czy potrzebujesz transportu na salę weselną spod kościoła?</label>
 <div class="flex items-center space-x-4">
 <label class="flex items-center">
@@ -363,6 +359,41 @@ Wyślij wszystkie ankiety
 </div>
 </div>
 </section>
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4 max-w-3xl">
+<h2 class="text-5xl md:text-6xl text-center font-light text-gray-800 mb-16">Kontakt do Pary Młodej</h2>
+<div class="bg-white shadow-lg rounded-lg p-8 border border-gray-100">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-secondary bg-opacity-20 p-6 rounded-lg">
+<h4 class="text-xl font-medium text-gray-800 mb-4">Kuba Hawryszków</h4>
+<div class="space-y-3">
+<div class="flex items-center space-x-3">
+<i class="ri-phone-line text-primary"></i>
+<a href="tel:605530618" class="text-gray-700 hover:text-primary transition-colors">605 530 618</a>
+</div>
+<div class="flex items-center space-x-3">
+<i class="ri-mail-line text-primary"></i>
+<a href="mailto:j.hawryszkow@gmail.com" class="text-gray-700 hover:text-primary transition-colors">j.hawryszkow@gmail.com</a>
+</div>
+</div>
+</div>
+<div class="bg-secondary bg-opacity-20 p-6 rounded-lg">
+<h4 class="text-xl font-medium text-gray-800 mb-4">Natalia Sękowska</h4>
+<div class="space-y-3">
+<div class="flex items-center space-x-3">
+<i class="ri-phone-line text-primary"></i>
+<a href="tel:504450951" class="text-gray-700 hover:text-primary transition-colors">504 450 951</a>
+</div>
+<div class="flex items-center space-x-3">
+<i class="ri-mail-line text-primary"></i>
+<a href="mailto:n.sekowska@onet.pl" class="text-gray-700 hover:text-primary transition-colors">n.sekowska@onet.pl</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 </main>
 <footer class="bg-gray-50 py-12">
 <div class="container mx-auto px-4 text-center">
@@ -373,6 +404,37 @@ Wyślij wszystkie ankiety
 <a href="#ceremony" class="text-gray-500 hover:text-primary transition-colors">Ceremonia</a>
 <a href="#reception" class="text-gray-500 hover:text-primary transition-colors">Przyjęcie</a>
 <a href="#rsvp" class="text-gray-500 hover:text-primary transition-colors">Ankieta</a>
+</div>
+<div class="max-w-lg mx-auto bg-white rounded-lg shadow-sm p-6 mb-8">
+<h4 class="text-xl font-light text-gray-800 mb-4">Masz pytania? Skontaktuj się z nami!</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<div class="flex flex-col space-y-2">
+<div class="flex items-center space-x-2">
+<i class="ri-phone-line text-primary"></i>
+<a href="tel:605530618" class="text-gray-700 hover:text-primary transition-colors">605 530 618</a>
+</div>
+<div class="flex items-center space-x-2">
+<i class="ri-mail-line text-primary"></i>
+<a href="mailto:j.hawryszkow@gmail.com" class="text-gray-700 hover:text-primary transition-colors">j.hawryszkow@gmail.com</a>
+</div>
+<p class="text-gray-600 mt-1">Kuba Hawryszków</p>
+</div>
+</div>
+<div>
+<div class="flex flex-col space-y-2">
+<div class="flex items-center space-x-2">
+<i class="ri-phone-line text-primary"></i>
+<a href="tel:504450951" class="text-gray-700 hover:text-primary transition-colors">504 450 951</a>
+</div>
+<div class="flex items-center space-x-2">
+<i class="ri-mail-line text-primary"></i>
+<a href="mailto:n.sekowska@onet.pl" class="text-gray-700 hover:text-primary transition-colors">n.sekowska@onet.pl</a>
+</div>
+<p class="text-gray-600 mt-1">Natalia Sękowska</p>
+</div>
+</div>
+</div>
 </div>
 <p class="text-gray-500 text-sm">© 2026 Natalia & Kuba. Wszystkie prawa zastrzeżone.</p>
 </div>
@@ -439,8 +501,61 @@ allFormsData.push(formDataObj);
 allFormsData.forEach(formData => {
 formData.recipient = 'j.hawryszkow@gmail.com';
 });
-// Send all form data (in a real scenario, this would be a server request)
-console.log('All forms data to be sent to:', 'j.hawryszkow@gmail.com', allFormsData);
+// Send form data to server
+fetch('/submit-form', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json'
+},
+body: JSON.stringify({
+recipient: 'j.hawryszkow@gmail.com',
+formData: allFormsData
+})
+})
+.then(response => response.json())
+.then(data => {
+if (data.success) {
+showConfirmation();
+} else {
+showError();
+}
+})
+.catch(() => showError());
+function showConfirmation() {
+const confirmationMessage = document.createElement('div');
+confirmationMessage.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+confirmationMessage.innerHTML = `
+<div class="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
+<h3 class="text-2xl font-light text-gray-800 mb-4">Dziękujemy!</h3>
+<p class="text-gray-700 mb-6">Ankiety ${allFormsData.length} gości zostały wysłane na adres: j.hawryszkow@gmail.com</p>
+<div class="text-center">
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-colors shadow-md whitespace-nowrap close-confirmation">Zamknij</button>
+</div>
+</div>
+`;
+document.body.appendChild(confirmationMessage);
+confirmationMessage.querySelector('.close-confirmation').addEventListener('click', function() {
+document.body.removeChild(confirmationMessage);
+allForms.forEach(form => form.reset());
+});
+}
+function showError() {
+const errorMessage = document.createElement('div');
+errorMessage.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+errorMessage.innerHTML = `
+<div class="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
+<h3 class="text-2xl font-light text-gray-800 mb-4">Wystąpił błąd</h3>
+<p class="text-gray-700 mb-6">Przepraszamy, nie udało się wysłać ankiet. Prosimy spróbować ponownie później.</p>
+<div class="text-center">
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-colors shadow-md whitespace-nowrap close-error">Zamknij</button>
+</div>
+</div>
+`;
+document.body.appendChild(errorMessage);
+errorMessage.querySelector('.close-error').addEventListener('click', function() {
+document.body.removeChild(errorMessage);
+});
+}
 // Show confirmation message
 const confirmationMessage = document.createElement('div');
 confirmationMessage.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
