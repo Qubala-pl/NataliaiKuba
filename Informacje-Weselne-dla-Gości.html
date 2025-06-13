@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zaproszenie na ślub - 26.06.2026</title>
+     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+      <script>
+      // Inicjalizacja EmailJS
+      (function () {
+      emailjs.init("7sNpblvgH4sVY_Cpw"); // <-- tutaj wklej swój publiczny klucz
+        })();
+    </script>
+
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
       tailwind.config = {
@@ -785,8 +793,13 @@
         });
         // Form submission handler
         const submitAllButton = document.getElementById("submit-all");
-        submitAllButton.addEventListener("click", function () {
-          const allForms = document.querySelectorAll(".guest-form");
+        submitAllButton.addEventListener("click", function () {  
+        const allForms = document.querySelectorAll(".guest-form");
+//---------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------
+
+          
           const allFormsData = [];
           allForms.forEach((form) => {
             const formData = new FormData(form);
@@ -807,18 +820,9 @@
           allFormsData.forEach((formData) => {
             formData.recipient = "j.hawryszkow@gmail.com";
           });
+        
           // Send form data to server
-          fetch("/submit-form", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              recipient: "j.hawryszkow@gmail.com",
-              formData: allFormsData,
-            }),
-          })
-            .then((response) => response.json())
+    emailjs.send("ankieta_weselna", "template_01jn3in", allFormsData)
             .then((data) => {
               if (data.success) {
                 showConfirmation();
@@ -826,7 +830,7 @@
                 showError();
               }
             })
-            .catch(() => showError());
+            .catch((error) => showError());
           function showConfirmation() {
             const confirmationMessage = document.createElement("div");
             confirmationMessage.className =
