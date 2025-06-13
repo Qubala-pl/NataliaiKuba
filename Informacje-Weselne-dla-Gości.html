@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function () {
-    emailjs.init("7sNpblvgH4sVY_Cpw"); // <- zamień na swój klucz
-  })();
-</script>
-    <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
+    
+ <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    // Inicjalizacja EmailJS
+    (function () {
+      emailjs.init("7sNpblvgH4sVY_Cpw"); // <-- tutaj wklej swój publiczny klucz
+    })();
+  </script>
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zaproszenie na ślub - 26.06.2026</title>
+    <title>1 Zaproszenie na ślub - 26.06.2026</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
       tailwind.config = {
@@ -790,46 +794,33 @@
           });
         });
         // Form submission handler
-const submitAllButton = document.getElementById("submit-all");
 
-submitAllButton.addEventListener("click", function () {
-  const allForms = document.querySelectorAll(".guest-form");
-  let combinedData = "";
+<script>
+    emailjs.init("7sNpblvgH4sVY_Cpw");
 
-  allForms.forEach((form, index) => {
-    const formData = new FormData(form);
-    combinedData += `--- Gość #${index + 1} ---\n`;
-    formData.forEach((value, key) => {
-      combinedData += `${key}: ${value}\n`;
+    const submitAllButton = document.getElementById("submit-all");
+
+    submitAllButton.addEventListener("click", function () {
+      const allForms = document.querySelectorAll(".guest-form");
+      let combinedMessage = "";
+
+      allForms.forEach((form, index) => {
+        const formData = new FormData(form);
+        combinedMessage += `--- Gość #${index + 1} ---\n`;
+        formData.forEach((value, key) => {
+          combinedMessage += `${key}: ${value}\n`;
+        });
+        combinedMessage += "\n";
+      });
+
+      const templateParams = {
+        message: combinedMessage,
+      };
+
+      emailjs.send("ankieta_weselna", "template_01jn3in", templateParams)
+        .then(() => alert("Wysłano!"))
+        .catch(() => alert("Błąd przy wysyłaniu."));
     });
-    combinedData += "\n";
-  });
-
-  const templateParams = {
-    message: combinedData,
-    subject: "Nowe zgłoszenie z formularza",
-    recipient: "j.hawryszkow@gmail.com", // opcjonalne, zależne od szablonu EmailJS
-  };
-
-  emailjs.send("Mail", "template_01jn3in", templateParams)
-    .then(() => {
-      showConfirmation();
-    })
-    .catch((error) => {
-      console.error("Błąd:", error);
-      showError();
-    });
-});
-
-
-
-
-
-
-
-
-
-
         
           function showConfirmation() {
             const confirmationMessage = document.createElement("div");
