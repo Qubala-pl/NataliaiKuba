@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaproszenie na ślub - 26.06.2026</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#f5b6c1',secondary:'#f5e1da'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+background-color: #fff9f8;
+}
+h1, h2, h3, h4 {
+font-family: 'Cormorant Garamond', serif;
+}
+.hero-section {
+background-image: url('https://public.readdy.ai/ai/img_res/405f3bf51714355866aa628c51d8a948.jpg');
+background-size: cover;
+background-position: center;
+}
+.section-divider {
+height: 50px;
+background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='50px' viewBox='0 0 1280 140' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f5b6c1' fill-opacity='0.2'%3E%3Cpath d='M0 140L1280 0V140z'/%3E%3C/g%3E%3C/svg%3E");
+background-size: 100% 100%;
+}
+input[type="radio"], input[type="checkbox"] {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #f5b6c1;
+border-radius: 50%;
+outline: none;
+position: relative;
+}
+input[type="checkbox"] {
+border-radius: 4px;
+}
+input[type="radio"]:checked::before, input[type="checkbox"]:checked::before {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 10px;
+height: 10px;
+background-color: #f5b6c1;
+border-radius: 50%;
+}
+input[type="checkbox"]:checked::before {
+border-radius: 2px;
+}
+input[type="text"], input[type="email"], textarea, select {
+border: 1px solid #f5d6d6;
+background-color: rgba(255, 255, 255, 0.8);
+}
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus, select:focus {
+outline: none;
+border-color: #f5b6c1;
+box-shadow: 0 0 0 3px rgba(245, 182, 193, 0.2);
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 0;
+background-color: #f5b6c1;
+transition: width 0.3s;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+</style>
+</head>
+<body>
+<header class="sticky top-0 z-50 bg-white bg-opacity-95 shadow-sm">
+<nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+<div class="font-['Pacifico'] text-primary text-2xl">Natalia & Kuba</div>
+<div class="hidden md:flex space-x-8">
+<a href="#home" class="nav-link text-gray-700 hover:text-primary transition-colors">Strona główna</a>
+<a href="#ceremony" class="nav-link text-gray-700 hover:text-primary transition-colors">Ceremonia</a>
+<a href="#reception" class="nav-link text-gray-700 hover:text-primary transition-colors">Przyjęcie</a>
+<a href="#rsvp" class="nav-link text-gray-700 hover:text-primary transition-colors">Ankieta</a>
+</div>
+<button class="md:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line text-gray-700 ri-lg"></i>
+</button>
+</nav>
+</header>
+<main>
+<section id="home" class="hero-section min-h-screen flex items-center relative">
+<div class="absolute inset-0 bg-white bg-opacity-60"></div>
+<div class="container mx-auto px-4 py-20 relative z-10 text-center">
+<h1 class="text-5xl md:text-7xl font-light text-gray-800 mb-4">Natalia & Kuba</h1>
+<p class="text-xl md:text-2xl font-light text-gray-700 mb-8">Z radością zapraszamy na nasz ślub</p>
+<div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+<div class="text-3xl md:text-5xl font-light text-gray-800 mb-6">26.06.2026</div>
+<p class="text-xl text-gray-700 mb-12">Piątek, godz. 15:00</p>
+<a href="#ceremony" class="inline-block bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-colors shadow-md whitespace-nowrap">Szczegóły uroczystości</a>
+</div>
+</section>
+<div class="section-divider"></div>
+<section id="ceremony" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-5xl md:text-6xl text-center font-light text-gray-800 mb-16">Ceremonia Ślubna</h2>
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
+<img src="https://static.readdy.ai/image/7d9813ab0a0992233ca166ade4b3174c/0984a0bf08e8592232a1e43068176f31.jpeg" alt="Kościół św. Anny" class="w-full h-auto object-cover">
+</div>
+<div class="w-full md:w-1/2 bg-secondary bg-opacity-20 p-8 rounded-lg">
+<h3 class="text-3xl font-light text-gray-800 mb-4">Parafia św. Gerarda</h3>
+<div class="flex items-start mb-4">
+<div class="w-8 h-8 flex items-center justify-center mr-3 text-primary">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<p class="text-gray-700">ul. Wiejska 17<br>44-121 Gliwice</p>
+</div>
+<div class="flex items-start mb-4">
+<div class="w-8 h-8 flex items-center justify-center mr-3 text-primary">
+<i class="ri-time-line ri-lg"></i>
+</div>
+<p class="text-gray-700">26 czerwca 2026, godz. 15:00</p>
+</div>
+<div class="flex items-start mb-8">
+<div class="w-8 h-8 flex items-center justify-center mr-3 text-primary">
+<i class="ri-information-line ri-lg"></i>
+</div>
+<p class="text-gray-700">Prosimy o przybycie 15 minut przed rozpoczęciem ceremonii.</p>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-md">
+<h4 class="text-xl font-medium text-gray-800 mb-3">Jak dojechać:</h4>
+<p class="text-gray-700 mb-4">Kościół znajduje się w dzielnicy Stare Gliwice. Można do niego dojechać autobusami linii 57, 699, 692, 186, 259. Wszystkie linie przejeżdżają przez Gliwickie Centrum Przesiadkowe.</p>
+<a href="https://www.google.com/maps/search/?api=1&query=Parafia+św.+Gerarda+Wiejska+17+44-121+Gliwice" target="_blank" rel="noopener noreferrer" class="h-48 bg-gray-100 rounded relative overflow-hidden block hover:opacity-90 transition-opacity cursor-pointer">
+<div class="absolute inset-0" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-position: center; background-size: cover;"></div>
+<div class="absolute bottom-2 right-2 w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center">
+<i class="ri-arrow-right-up-line text-primary"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 max-w-3xl mx-auto">
+<div class="bg-secondary bg-opacity-20 p-8 rounded-lg shadow-md">
+<h3 class="text-3xl font-light text-gray-800 mb-6">Transport dla Gości</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center mr-3 text-primary">
+<i class="ri-bus-line ri-lg"></i>
+</div>
+<div>
+<p class="text-gray-700">Po ceremonii ślubu w Kościele na parkingu będzie czekał autobus, który zabierze Państwa bezpośrednio na salę weselną.</p>
+<p class="flex items-center mt-2 text-gray-600">
+<i class="ri-time-line ri-lg mr-2"></i>
+<span>Wyjazd nastąpi tuż po zakończeniu ceremonii.</span>
+</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center mr-3 text-primary">
+<i class="ri-taxi-line ri-lg"></i>
+</div>
+<div>
+<p class="text-gray-700">W trosce o komfort i bezpieczeństwo naszych Gości, po zakończeniu przyjęcia zapewniamy darmowe taksówki, które odwieżą Państwa do miejsc noclegowych.</p>
+<p class="flex items-center mt-2 text-gray-600">
+<i class="ri-phone-line ri-lg mr-2"></i>
+<span>Wystarczy zadzwonić pod numer: XXXX XXX XXX – kierowca będzie do dyspozycji.</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="section-divider transform rotate-180"></div>
+<section id="reception" class="py-20 bg-secondary bg-opacity-10">
+<div class="container mx-auto px-4">
+<h2 class="text-5xl md:text-6xl text-center font-light text-gray-800 mb-16">Przyjęcie Weselne</h2>
+<div class="flex flex-col md:flex-row-reverse items-center gap-10">
+<div class="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
+<img src="https://static.readdy.ai/image/7d9813ab0a0992233ca166ade4b3174c/5a3f692b8ac8022cdd083b38fb8b0f72.webp" alt="Restauracja Umami" class="w-full h-auto object-cover">
+</div>
+<div class="w-full md:w-1/2 bg-white p-8 rounded-lg shadow-md">
+<h3 class="text-3xl font-light text-gray-800 mb-4">Restauracja Umami</h3>
+<div class="flex items-start mb-4">
+<div class="w-8 h-8 flex items-center justify-center mr-3 text-primary">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<p class="text-gray-700">ul. gen. Sikorskiego 46<br>44-120 Pyskowice</p>
+</div>
+<div class="flex items-start mb-4">
+<div class="w-8 h-8 flex items-center justify-center mr-3 text-primary">
+<i class="ri-time-line ri-lg"></i>
+</div>
+<p class="text-gray-700">26 czerwca 2026, godz. 17:00</p>
+</div>
+<div class="flex items-start mb-8">
+<div class="w-8 h-8 flex items-center justify-center mr-3 text-primary">
+<i class="ri-car-line ri-lg"></i>
+</div>
+<p class="text-gray-700">Dostępny parking dla gości. Odległość od kościoła: 8 km.</p>
+</div>
+<div class="bg-secondary bg-opacity-20 p-4 rounded-lg">
+<h4 class="text-xl font-medium text-gray-800 mb-3">Informacje dodatkowe:</h4>
+<p class="text-gray-700 mb-4">Restauracja Umami słynie z wyjątkowej kuchni fusion i eleganckiego wystroju. Posiada przestronny taras z widokiem na ogród, idealny na wieczorne rozmowy i odpoczynek.</p>
+<a href="https://www.google.com/maps/search/?api=1&query=Parafia+św.+Gerarda+Wiejska+17+44-121+Gliwice" target="_blank" rel="noopener noreferrer" class="h-48 bg-gray-100 rounded relative overflow-hidden block hover:opacity-90 transition-opacity cursor-pointer">
+<div class="absolute inset-0" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-position: center; background-size: cover;"></div>
+<div class="absolute bottom-2 right-2 w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center">
+<i class="ri-arrow-right-up-line text-primary"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="section-divider"></div>
+<section id="rsvp" class="py-20 bg-white">
+<div class="container mx-auto px-4 max-w-3xl">
+<h2 class="text-5xl md:text-6xl text-center font-light text-gray-800 mb-6">Ankieta dla Gości</h2>
+<p class="text-center text-gray-700 mb-16">Prosimy o wypełnienie krótkiej ankiety, która pomoże nam w przygotowaniach.</p>
+<div id="guests-forms">
+<form class="bg-white shadow-lg rounded-lg p-8 border border-gray-100 mb-8 guest-form">
+<div class="mb-8">
+<h3 class="text-2xl font-light text-gray-800 mb-6">Dane osobowe</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-gray-700 mb-2" for="name">Imię i nazwisko</label>
+<input type="text" id="name" class="w-full px-4 py-2 rounded border-none" placeholder="Jan Kowalski">
+</div>
+<div>
+<label class="block text-gray-700 mb-2" for="email">Email</label>
+<input type="email" id="email" class="w-full px-4 py-2 rounded border-none" placeholder="jan.kowalski@email.pl">
+</div>
+<div>
+<label class="block text-gray-700 mb-2" for="phone">Telefon</label>
+<input type="text" id="phone" class="w-full px-4 py-2 rounded border-none" placeholder="123 456 789">
+</div>
+<div>
+<label class="block text-gray-700 mb-2">Potwierdzenie obecności</label>
+<div class="flex items-center space-x-4">
+<label class="flex items-center">
+<input type="radio" name="attendance" class="mr-2">
+<span>Potwierdzam</span>
+</label>
+<label class="flex items-center">
+<input type="radio" name="attendance" class="mr-2">
+<span>Nie mogę przybyć</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-2xl font-light text-gray-800 mb-6">Preferencje menu</h3>
+<div class="mb-6">
+<label class="block text-gray-700 mb-3">Preferencje dietetyczne:</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<label class="flex items-center p-3 bg-secondary bg-opacity-10 rounded">
+<input type="checkbox" name="dietary" class="mr-3">
+<span>Wegetarianin</span>
+</label>
+<label class="flex items-center p-3 bg-secondary bg-opacity-10 rounded">
+<input type="checkbox" name="dietary" class="mr-3">
+<span>Weganin</span>
+</label>
+<label class="flex items-center p-3 bg-secondary bg-opacity-10 rounded">
+<input type="checkbox" name="dietary" class="mr-3">
+<span>Bezglutenowe</span>
+</label>
+<label class="flex items-center p-3 bg-secondary bg-opacity-10 rounded">
+<input type="checkbox" name="dietary" class="mr-3">
+<span>Bez laktozy</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-gray-700 mb-2" for="allergies">Alergie pokarmowe lub inne uwagi:</label>
+<textarea id="allergies" rows="3" class="w-full px-4 py-2 rounded border-none" placeholder="Proszę wymienić alergie lub inne specjalne wymagania..."></textarea>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="text-2xl font-light text-gray-800 mb-6">Dodatkowe informacje</h3>
+<div class="mb-6">
+<label class="block text-gray-700 mb-2">Czy potrzebujesz transportu na salę weselną spod kościoła?</label>
+<div class="flex items-center space-x-4">
+<label class="flex items-center">
+<input type="radio" name="transport" class="mr-2">
+<span>Tak</span>
+</label>
+<label class="flex items-center">
+<input type="radio" name="transport" class="mr-2">
+<span>Nie</span>
+</label>
+</div>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 mb-3">Preferowane rodzaje alkoholu:</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<label class="flex items-center p-3 bg-secondary bg-opacity-10 rounded">
+<input type="checkbox" name="alcohol" class="mr-3">
+<span>Wino białe</span>
+</label>
+<label class="flex items-center p-3 bg-secondary bg-opacity-10 rounded">
+<input type="checkbox" name="alcohol" class="mr-3">
+<span>Wino czerwone</span>
+</label>
+<label class="flex items-center p-3 bg-secondary bg-opacity-10 rounded">
+<input type="checkbox" name="alcohol" class="mr-3">
+<span>Whisky</span>
+</label>
+<label class="flex items-center p-3 bg-secondary bg-opacity-10 rounded">
+<input type="checkbox" name="alcohol" class="mr-3">
+<span>Wódka</span>
+</label>
+<label class="flex items-center p-3 bg-secondary bg-opacity-10 rounded">
+<input type="checkbox" name="alcohol" class="mr-3">
+<span>Piwo</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-gray-700 mb-2" for="additional">Dodatkowe uwagi:</label>
+<textarea id="additional" rows="3" class="w-full px-4 py-2 rounded border-none" placeholder="Inne informacje, które chcesz nam przekazać..."></textarea>
+</div>
+</div>
+</form>
+</div>
+<div class="text-center mt-8 space-y-4">
+<button type="button" id="add-guest" class="bg-white border-2 border-primary text-primary px-6 py-3 !rounded-button hover:bg-primary hover:text-white transition-all shadow-md whitespace-nowrap flex items-center justify-center mx-auto">
+<i class="ri-add-line ri-lg mr-2"></i>
+Dodaj kolejnego gościa
+</button>
+<button type="button" id="submit-all" class="bg-primary text-white px-10 py-3 !rounded-button hover:bg-opacity-90 transition-colors shadow-md whitespace-nowrap">
+Wyślij wszystkie ankiety
+</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-50 py-12">
+<div class="container mx-auto px-4 text-center">
+<div class="font-['Pacifico'] text-primary text-3xl mb-6">Natalia & Kuba</div>
+<p class="text-gray-700 mb-8">Dziękujemy za wypełnienie ankiety i czekamy na spotkanie!</p>
+<div class="flex justify-center space-x-6 mb-8">
+<a href="#home" class="text-gray-500 hover:text-primary transition-colors">Strona główna</a>
+<a href="#ceremony" class="text-gray-500 hover:text-primary transition-colors">Ceremonia</a>
+<a href="#reception" class="text-gray-500 hover:text-primary transition-colors">Przyjęcie</a>
+<a href="#rsvp" class="text-gray-500 hover:text-primary transition-colors">Ankieta</a>
+</div>
+<p class="text-gray-500 text-sm">© 2026 Natalia & Kuba. Wszystkie prawa zastrzeżone.</p>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const guestsFormsContainer = document.getElementById('guests-forms');
+const addGuestButton = document.getElementById('add-guest');
+const firstForm = document.querySelector('.guest-form');
+function createNewGuestForm() {
+const newForm = firstForm.cloneNode(true);
+newForm.querySelectorAll('input, textarea').forEach(input => {
+input.value = '';
+if (input.type === 'radio' || input.type === 'checkbox') {
+input.checked = false;
+}
+});
+const removeButton = document.createElement('button');
+removeButton.type = 'button';
+removeButton.className = 'absolute top-4 right-4 text-gray-400 hover:text-primary transition-colors';
+removeButton.innerHTML = '<i class="ri-close-line ri-lg"></i>';
+removeButton.addEventListener('click', function() {
+newForm.remove();
+});
+newForm.style.position = 'relative';
+newForm.appendChild(removeButton);
+guestsFormsContainer.appendChild(newForm);
+}
+addGuestButton.addEventListener('click', createNewGuestForm);
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+window.scrollTo({
+top: target.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+// Form submission handler
+const submitAllButton = document.getElementById('submit-all');
+submitAllButton.addEventListener('click', function() {
+const allForms = document.querySelectorAll('.guest-form');
+const allFormsData = [];
+allForms.forEach(form => {
+const formData = new FormData(form);
+const formDataObj = {};
+formData.forEach((value, key) => {
+if (formDataObj[key]) {
+if (!Array.isArray(formDataObj[key])) {
+formDataObj[key] = [formDataObj[key]];
+}
+formDataObj[key].push(value);
+} else {
+formDataObj[key] = value;
+}
+});
+allFormsData.push(formDataObj);
+});
+// Add recipient email to each form
+allFormsData.forEach(formData => {
+formData.recipient = 'j.hawryszkow@gmail.com';
+});
+// Send form data to server
+fetch('/submit-form', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json'
+},
+body: JSON.stringify({
+recipient: 'j.hawryszkow@gmail.com',
+formData: allFormsData
+})
+})
+.then(response => response.json())
+.then(data => {
+if (data.success) {
+showConfirmation();
+} else {
+showError();
+}
+})
+.catch(() => showError());
+function showConfirmation() {
+const confirmationMessage = document.createElement('div');
+confirmationMessage.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+confirmationMessage.innerHTML = `
+<div class="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
+<h3 class="text-2xl font-light text-gray-800 mb-4">Dziękujemy!</h3>
+<p class="text-gray-700 mb-6">Ankiety ${allFormsData.length} gości zostały wysłane na adres: j.hawryszkow@gmail.com</p>
+<div class="text-center">
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-colors shadow-md whitespace-nowrap close-confirmation">Zamknij</button>
+</div>
+</div>
+`;
+document.body.appendChild(confirmationMessage);
+confirmationMessage.querySelector('.close-confirmation').addEventListener('click', function() {
+document.body.removeChild(confirmationMessage);
+allForms.forEach(form => form.reset());
+});
+}
+function showError() {
+const errorMessage = document.createElement('div');
+errorMessage.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+errorMessage.innerHTML = `
+<div class="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
+<h3 class="text-2xl font-light text-gray-800 mb-4">Wystąpił błąd</h3>
+<p class="text-gray-700 mb-6">Przepraszamy, nie udało się wysłać ankiet. Prosimy spróbować ponownie później.</p>
+<div class="text-center">
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-colors shadow-md whitespace-nowrap close-error">Zamknij</button>
+</div>
+</div>
+`;
+document.body.appendChild(errorMessage);
+errorMessage.querySelector('.close-error').addEventListener('click', function() {
+document.body.removeChild(errorMessage);
+});
+}
+// Show confirmation message
+const confirmationMessage = document.createElement('div');
+confirmationMessage.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+confirmationMessage.innerHTML = `
+<div class="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
+<h3 class="text-2xl font-light text-gray-800 mb-4">Dziękujemy!</h3>
+<p class="text-gray-700 mb-6">Ankiety ${allFormsData.length} gości zostały wysłane na adres: j.hawryszkow@gmail.com</p>
+<div class="text-center">
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-colors shadow-md whitespace-nowrap close-confirmation">Zamknij</button>
+</div>
+</div>
+`;
+document.body.appendChild(confirmationMessage);
+// Close confirmation message
+confirmationMessage.querySelector('.close-confirmation').addEventListener('click', function() {
+document.body.removeChild(confirmationMessage);
+allForms.forEach(form => form.reset());
+});
+});
+});
+</script>
+</body>
+</html>
