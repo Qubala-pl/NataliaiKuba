@@ -784,48 +784,38 @@
           });
         });
         // Form submission handler
-        const submitAllButton = document.getElementById("submit-all");
-        submitAllButton.addEventListener("click", function () {
+    const submitAllButton = document.getElementById("submit-all");
+        ssubmitAllButton.addEventListener("click", function () {
           const allForms = document.querySelectorAll(".guest-form");
-          const allFormsData = [];
-          allForms.forEach((form) => {
-            const formData = new FormData(form);
-            const formDataObj = {};
-            formData.forEach((value, key) => {
-              if (formDataObj[key]) {
-                if (!Array.isArray(formDataObj[key])) {
-                  formDataObj[key] = [formDataObj[key]];
-                }
-                formDataObj[key].push(value);
-              } else {
-                formDataObj[key] = value;
-              }
-            });
-            allFormsData.push(formDataObj);
-          });
-          // Add recipient email to each form
-          allFormsData.forEach((formData) => {
-            formData.recipient = "j.hawryszkow@gmail.com";
-          });
+  let combinedMessage = "";
+allForms.forEach((form, index) => {
+    const formData = new FormData(form);
+    combinedMessage += `--- Gość #${index + 1} ---\n`;
+    formData.forEach((value, key) => {
+      combinedMessage += `${key}: ${value}\n`;
+    });
+    combinedMessage += "\n";
+  });
           // Send form data to server
-          fetch("https://formsubmit.io/send/j.hawryszkow@gmail.com", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body: formData.toString({
-              recipient: "j.hawryszkow@gmail.com",
-              formData: allFormsData,
-            }),
-          })
-         .then((res) => {
-    if (res.ok) {
-      showConfirmation(); 
-    } else {
-      showError(); 
-    }
-            })
-            .catch(() => showError());
+         fetch("https://formsubmit.io/send/j.hawryszkow@gmail.com", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: data.toString(),
+  })
+    .then((res) => {
+      if (res.ok) {
+        showConfirmation();
+      } else {
+        showError();
+      }
+    })
+    .catch((err) => {
+      console.error("Błąd:", err);
+      showError();
+    });
+});
           function showConfirmation() {
             const confirmationMessage = document.createElement("div");
             confirmationMessage.className =
