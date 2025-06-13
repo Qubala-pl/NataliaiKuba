@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("7sNpblvgH4sVY_Cpw"); // <- zamień na swój klucz
+  })();
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zaproszenie na ślub - 26.06.2026</title>
@@ -784,38 +790,47 @@
           });
         });
         // Form submission handler
-    const submitAllButton = document.getElementById("submit-all");
-        ssubmitAllButton.addEventListener("click", function () {
-          const allForms = document.querySelectorAll(".guest-form");
-  let combinedMessage = "";
-allForms.forEach((form, index) => {
+const submitAllButton = document.getElementById("submit-all");
+
+submitAllButton.addEventListener("click", function () {
+  const allForms = document.querySelectorAll(".guest-form");
+  let combinedData = "";
+
+  allForms.forEach((form, index) => {
     const formData = new FormData(form);
-    combinedMessage += `--- Gość #${index + 1} ---\n`;
+    combinedData += `--- Gość #${index + 1} ---\n`;
     formData.forEach((value, key) => {
-      combinedMessage += `${key}: ${value}\n`;
+      combinedData += `${key}: ${value}\n`;
     });
-    combinedMessage += "\n";
+    combinedData += "\n";
   });
-          // Send form data to server
-         fetch("https://formsubmit.io/send/j.hawryszkow@gmail.com", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: data.toString(),
-  })
-    .then((res) => {
-      if (res.ok) {
-        showConfirmation();
-      } else {
-        showError();
-      }
+
+  const templateParams = {
+    message: combinedData,
+    subject: "Nowe zgłoszenie z formularza",
+    recipient: "j.hawryszkow@gmail.com", // opcjonalne, zależne od szablonu EmailJS
+  };
+
+  emailjs.send("Mail", "ankieta_weselna", templateParams)
+    .then(() => {
+      showConfirmation();
     })
-    .catch((err) => {
-      console.error("Błąd:", err);
+    .catch((error) => {
+      console.error("Błąd:", error);
       showError();
     });
 });
+
+
+
+
+
+
+
+
+
+
+        
           function showConfirmation() {
             const confirmationMessage = document.createElement("div");
             confirmationMessage.className =
