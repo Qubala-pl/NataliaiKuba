@@ -167,7 +167,7 @@ width: 100%;
 </div>
 <div class="mt-16 max-w-3xl mx-auto">
 <div class="bg-secondary bg-opacity-20 p-8 rounded-lg shadow-md">
-<h3 class="text-3xl font-light text-gray-800 mb-6">Transport dla Gości</h3>
+<h3 class="text-4xl font-light text-gray-800 mb-6">Transport dla Gości</h3>
 <div class="space-y-6">
 <div class="flex items-start">
 <div class="w-8 h-8 flex items-center justify-center mr-3 text-primary">
@@ -411,8 +411,10 @@ Wyślij wszystkie ankiety
 <p class="text-gray-500 text-sm">© 2026 Natalia & Kuba. Wszystkie prawa zastrzeżone.</p>
 </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+emailjs.init("public_key"); // Replace with your actual EmailJS public key
 const guestsFormsContainer = document.getElementById('guests-forms');
 const addGuestButton = document.getElementById('add-guest');
 const firstForm = document.querySelector('.guest-form');
@@ -473,26 +475,34 @@ allFormsData.push(formDataObj);
 allFormsData.forEach(formData => {
 formData.recipient = 'j.hawryszkow@gmail.com';
 });
-// Send form data to server
-fetch('/submit-form', {
-method: 'POST',
-headers: {
-'Content-Type': 'application/json'
-},
-body: JSON.stringify({
-recipient: 'j.hawryszkow@gmail.com',
-formData: allFormsData
-})
-})
-.then(response => response.json())
-.then(data => {
-if (data.success) {
-showConfirmation();
-} else {
-showError();
+// Send form data using EmailJS
+const emailPromises = allFormsData.map(formData => {
+return emailjs.send(
+"ankieta_weselna", 
+"template_01jn3in",
+{
+to_email: "j.hawryszkow@gmail.com",
+from_name: formData.name || "Wedding Guest",
+guest_name: formData.name || "Not specified",
+guest_email: formData.email || "Not specified",
+guest_phone: formData.phone || "Not specified",
+attendance: formData.attendance || "Not specified",
+dietary_preferences: Array.isArray(formData.dietary) ? formData.dietary.join(", ") : "None",
+allergies: formData.allergies || "None",
+transport_needed: formData.transport || "Not specified",
+alcohol_preferences: Array.isArray(formData.alcohol) ? formData.alcohol.join(", ") : "None",
+additional_notes: formData.additional || "None"
 }
+);
+});
+Promise.all(emailPromises)
+.then(() => {
+showConfirmation();
 })
-.catch(() => showError());
+.catch((error) => {
+console.error("Failed to send emails:", error);
+showError();
+});
 function showConfirmation() {
 const confirmationMessage = document.createElement('div');
 confirmationMessage.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
