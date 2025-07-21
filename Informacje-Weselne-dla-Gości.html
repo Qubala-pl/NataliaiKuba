@@ -775,7 +775,7 @@
           });
           // Send form data using EmailJS
           const emailPromises = allFormsData.map((formData) => {
-           var templateParams = {
+const templateParams = {
               to_email: "j.hawryszkow@gmail.com",
               from_name: formData.name || "Wedding Guest",
               guest_name: formData.name || "Not specified",
@@ -792,7 +792,11 @@
                 : "None",
               additional_notes: formData.additional || "None",
             };
-            return emailjs.send("ankieta_weselna", "template_01jn3in", templateParams ).then (
+            return emailjs.send(
+              "ankieta_weselna",
+              "template_01jn3in",
+              templateParams,
+            ).then (
   (response) => {
     console.log('SUCCESS!', response.status, response.text);
     showConfirmation();
