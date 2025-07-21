@@ -796,13 +796,14 @@
             });
           });
           Promise.all(emailPromises)
-            .then(() => {
+            .then((response) => {
               showConfirmation();
-            })
-            .catch((error) => {
+            },
+                 (error) => {
               console.error("Failed to send emails:", error);
               showError();
-            });
+            );
+           
           function showConfirmation() {
             const confirmationMessage = document.createElement("div");
             confirmationMessage.className =
