@@ -777,7 +777,7 @@
           });
           // Send form data using EmailJS
           const emailPromises = allFormsData.map((formData) => {
-            return emailjs.send("ankieta_weselna", "template_01jn3in", {
+           var templateParams = {
               to_email: "j.hawryszkow@gmail.com",
               from_name: formData.name || "Wedding Guest",
               guest_name: formData.name || "Not specified",
@@ -793,16 +793,26 @@
                 ? formData.alcohol.join(", ")
                 : "None",
               additional_notes: formData.additional || "None",
-            });
+            };
+            return emailjs.send("ankieta_weselna", "template_01jn3in", templateParams ).then (
+  (response) => {
+    console.log('SUCCESS!', response.status, response.text);
+    showConfirmation();
+  },
+  (error) => {
+    console.log('FAILED...', error);
+    showError();
+  },
+);
           });
-          Promise.all(emailPromises)
-            .then(() => {
-              showConfirmation();
-            })
-            .catch((error) => {
-              console.error("Failed to send emails:", error);
-              showError();
-            });
+    //      Promise.all(emailPromises)
+//            .then(() => {
+ //             showConfirmation();
+//            })
+//            .catch((error) => {
+//              console.error("Failed to send emails:", error);
+//              showError();
+//            });
           function showError() {
             const errorMessage = document.createElement("div");
             errorMessage.className =
