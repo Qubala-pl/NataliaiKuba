@@ -817,13 +817,7 @@
       </div>
       </div>
       `;
-            document.body.appendChild(confirmationMessage);
-            confirmationMessage
-              .querySelector(".close-confirmation")
-              .addEventListener("click", function () {
-                document.body.removeChild(confirmationMessage);
-                allForms.forEach((form) => form.reset());
-              });
+
           }
           function showError() {
             const errorMessage = document.createElement("div");
