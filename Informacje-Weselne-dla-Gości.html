@@ -471,7 +471,7 @@
                         <input
                           type="radio"
                           name="attendance"
-                          value="confirm"
+                          value="potwierdzam"
                           class="mr-2"
                         />
                         <span>Potwierdzam</span>
@@ -480,7 +480,7 @@
                         <input
                           type="radio"
                           name="attendance"
-                          value="decline"
+                          value="nie_przyjade"
                           class="mr-2"
                         />
                         <span>Nie mogę przybyć</span>
@@ -515,7 +515,7 @@
                       <input
                          type="radio"
                         name="dietary"
-                        value="kids"
+                        value="dzieciece"
                         class="mr-2"
                       />
                       <span>Dziecięce</span>
@@ -560,7 +560,7 @@
                       <input
                         type="radio"
                         name="transport"
-                        value="yes"
+                        value="tak"
                         class="mr-2"
                       />
                       <span>Tak</span>
@@ -569,7 +569,7 @@
                       <input
                         type="radio"
                         name="transport"
-                        value="no"
+                        value="nie"
                         class="mr-2"
                       />
                       <span>Nie</span>
@@ -587,7 +587,7 @@
                       <input
                         type="checkbox"
                         name="alcohol"
-                        value="white-wine"
+                        value="białe_wino"
                         class="mr-3"
                       />
                       <span>Wino białe</span>
@@ -598,7 +598,7 @@
                       <input
                         type="checkbox"
                         name="alcohol"
-                        value="red-wine"
+                        value="czerwone_wino"
                         class="mr-3"
                       />
                       <span>Wino czerwone</span>
@@ -620,7 +620,7 @@
                       <input
                         type="checkbox"
                         name="alcohol"
-                        value="vodka"
+                        value="wódka"
                         class="mr-3"
                       />
                       <span>Wódka</span>
@@ -631,7 +631,7 @@
                       <input
                         type="checkbox"
                         name="alcohol"
-                        value="beer"
+                        value="piwo"
                         class="mr-3"
                       />
                       <span>Piwo</span>
@@ -642,7 +642,7 @@
                       <input
                         type="checkbox"
                         name="alcohol"
-                        value="none"
+                        value="bezalkoholowe"
                         class="mr-3"
                       />
                       <span>Bezalkoholowe</span>
@@ -847,20 +847,20 @@
           const emailPromises = allFormsData.map((formData) => {
             const templateParams = {
               to_email: "j.hawryszkow@gmail.com",
-              from_name: formData.name || "Wedding Guest",
-              guest_name: formData.name || "Not specified",
-              guest_email: formData.email || "Not specified",
-              guest_phone: formData.phone || "Not specified",
-              attendance: formData.attendance || "Not specified",
+              from_name: formData.name || "brak",
+              guest_name: formData.name || "brak",
+              guest_email: formData.email || "brak",
+              guest_phone: formData.phone || "brak",
+              attendance: formData.attendance || "brak",
               dietary_preferences: Array.isArray(formData.dietary)
                 ? formData.dietary.join(", ")
-                : "None",
-              allergies: formData.allergies || "None",
-              transport_needed: formData.transport || "Not specified",
+                : "brak",
+              allergies: formData.allergies || "brak",
+              transport_needed: formData.transport || "brak",
               alcohol_preferences: Array.isArray(formData.alcohol)
                 ? formData.alcohol.join(", ")
-                : "None",
-              additional_notes: formData.additional || "None",
+                : "brak",
+              additional_notes: formData.additional || "brak",
             };
             return emailjs.send(
               "ankieta_weselna",
