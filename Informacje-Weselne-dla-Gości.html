@@ -869,36 +869,30 @@
             const formData = new FormData(form);
             const formDataObj = {};
 // Pobranie wszystkich pól formularza
-    const inputs = form.querySelectorAll("input, select, textarea");
-  inputs.forEach((input) => {
-      const name = input.name;
- if (!name) return; // pomijamy inputy bez nazwy
+          const inputs = form.querySelectorAll("input, select, textarea");
 
-      if (input.type === "checkbox") {
-        // jeśli checkbox już nie istnieje w obiekcie, inicjalizujemy
-        if (!formDataObj[name]) formDataObj[name] = [];
+          inputs.forEach((input) => {
+            const name = input.name;
+            if (!name) return;
 
-        // jeśli zaznaczony, dodajemy wartość
-        if (input.checked) {
-          formDataObj[name].push(input.value);
-        }
-        // jeśli nie zaznaczony, zostawiamy tablicę pustą lub możemy ustawić false
-        // formDataObj[name] = input.checked ? [input.value] : [];
-      } else if (input.type === "radio") {
-        // radio - tylko zaznaczony element
-        if (input.checked) {
-          formDataObj[name] = input.value;
-        } else if (!formDataObj[name]) {
-          formDataObj[name] = null; // brak wyboru jeszcze
-        }
-      } else {
-        // inne typy pól (text, select, textarea)
-        formDataObj[name] = input.value;
-      }
-    });
+            if (input.type === "checkbox") {
+              if (!formDataObj[name]) formDataObj[name] = [];
+              if (input.checked) {
+                formDataObj[name].push(input.value);
+              }
+            } else if (input.type === "radio") {
+              if (input.checked) {
+                formDataObj[name] = input.value;
+              } else if (!formDataObj[name]) {
+                formDataObj[name] = null;
+              }
+            } else {
+              formDataObj[name] = input.value;
+            }
+          });
 
-    allFormsData.push(formDataObj);
-  });
+          allFormsData.push(formDataObj);
+        });
 
   console.log(allFormsData);
 
