@@ -868,25 +868,43 @@
           allForms.forEach((form) => {
             const formData = new FormData(form);
             const formDataObj = {};
-            formData.forEach((value, key) => {
-              // jeśli klucz jeszcze nie istnieje, od razu tworzysz tablicę
-              if (!formDataObj[key]) {
-                  formDataObj[key] = [];
-                  }
-                  formDataObj[key].push(value);
-                  });
-            //formData.forEach((value, key) => {
-              //if (formDataObj[key]) {
-              //  if (!Array.isArray(formDataObj[key])) {
-              //    formDataObj[key] = [formDataObj[key]];
-             //   }
-           //     formDataObj[key].push(value);
-            //  } else {
-            //    formDataObj[key] = value;
-           //   }
-           // });
-            allFormsData.push(formDataObj);
-          });
+// Pobranie wszystkich pól formularza
+    const inputs = form.querySelectorAll("input, select, textarea");
+  inputs.forEach((input) => {
+      const name = input.name;
+ if (!name) return; // pomijamy inputy bez nazwy
+
+      if (input.type === "checkbox") {
+        // jeśli checkbox już nie istnieje w obiekcie, inicjalizujemy
+        if (!formDataObj[name]) formDataObj[name] = [];
+
+        // jeśli zaznaczony, dodajemy wartość
+        if (input.checked) {
+          formDataObj[name].push(input.value);
+        }
+        // jeśli nie zaznaczony, zostawiamy tablicę pustą lub możemy ustawić false
+        // formDataObj[name] = input.checked ? [input.value] : [];
+      } else if (input.type === "radio") {
+        // radio - tylko zaznaczony element
+        if (input.checked) {
+          formDataObj[name] = input.value;
+        } else if (!formDataObj[name]) {
+          formDataObj[name] = null; // brak wyboru jeszcze
+        }
+      } else {
+        // inne typy pól (text, select, textarea)
+        formDataObj[name] = input.value;
+      }
+    });
+
+    allFormsData.push(formDataObj);
+  });
+
+  console.log(allFormsData);
+
+
+
+            
           // Add recipient email to each form
           allFormsData.forEach((formData) => {
             formData.recipient = "j.hawryszkow@gmail.com";
