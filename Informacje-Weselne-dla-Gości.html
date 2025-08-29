@@ -869,15 +869,22 @@
             const formData = new FormData(form);
             const formDataObj = {};
             formData.forEach((value, key) => {
-              if (formDataObj[key]) {
-                if (!Array.isArray(formDataObj[key])) {
-                  formDataObj[key] = [formDataObj[key]];
-                }
-                formDataObj[key].push(value);
-              } else {
-                formDataObj[key] = value;
-              }
-            });
+              // jeśli klucz jeszcze nie istnieje, od razu tworzysz tablicę
+              if (!formDataObj[key]) {
+                  formDataObj[key] = [];
+                  }
+                  formDataObj[key].push(value);
+                  });
+            //formData.forEach((value, key) => {
+              //if (formDataObj[key]) {
+              //  if (!Array.isArray(formDataObj[key])) {
+              //    formDataObj[key] = [formDataObj[key]];
+             //   }
+           //     formDataObj[key].push(value);
+            //  } else {
+            //    formDataObj[key] = value;
+           //   }
+           // });
             allFormsData.push(formDataObj);
           });
           // Add recipient email to each form
