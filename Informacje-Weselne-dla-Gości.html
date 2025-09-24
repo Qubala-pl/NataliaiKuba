@@ -829,9 +829,11 @@
         function createNewGuestForm() {
           const newForm = firstForm.cloneNode(true);
           newForm.querySelectorAll("input, textarea").forEach((input) => {
-            input.value = "";
             if (input.type === "radio" || input.type === "checkbox") {
               input.checked = false;
+            }
+            else{
+              input.value = "";
             }
           });
           const removeButton = document.createElement("button");
@@ -985,7 +987,7 @@
               allForms.forEach((form) => form.reset());
             });
         });
-      });    
+      });   
     </script>
   </body>
 </html>
